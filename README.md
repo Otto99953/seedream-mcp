@@ -6,13 +6,13 @@
 
 ## 📋 新设备 / 新 Agent 一键配置指令（直接复制给 Agent）
 
-> 在任何新设备上打开任意 AI Agent（如 ZCode / Claude Code / Codex 等），**直接复制并发送以下提示词**，Agent 即可全自动拉取本仓库并完成环境与配置接入：
+> 在任何新设备上打开任意 AI Agent，**直接复制并发送以下通用提示词**，Agent 即可全自动拉取本仓库并完成环境与配置接入：
 
 ```text
 请帮我一键配置并接入当前设备的 Seedream 生图 MCP 服务：
-1. 将私有仓库 https://github.com/Otto99953/seedream-mcp.git 克隆到本地工具目录（例如 Windows 下 ~/.tools/seedream-mcp，或 ~/.zcode/tools/seedream-mcp）并执行 npm install 安装依赖。
-2. 读取该仓库中的 README.md，识别你当前所处的 Agent/客户端环境（ZCode / Claude / Codex），按照 README 中该 Agent 对应的配置路径与格式，将 seedream MCP 服务注册到配置文件中（建议配置超时时间为 180 秒/180000ms）。
-3. 如果当前环境支持 Skill/规则扩展（如 ~/.agents/skills/ 或 ~/.zcode/skills/），请根据 README 中的规范配置 image-generation 生图技能。
+1. 将私有仓库 https://github.com/Otto99953/seedream-mcp.git 克隆到本地通用工具目录（例如 ~/.tools/seedream-mcp）并执行 npm install 安装依赖。
+2. 读取该仓库中的 README.md，识别你当前所处的 Agent/客户端环境，按照 README 中该环境对应的配置路径与格式，将 seedream MCP 服务注册到相应的配置文件中（建议配置超时时间为 180 秒/180000ms）。
+3. 如果当前环境支持 Skill 或指令规则扩展（如 ~/.agents/skills/ 或对应系统），请根据 README 中的规范配置 image-generation 生图技能。
 4. 检查系统环境变量 ARK_API_KEY 是否已配置，若未配置请根据当前操作系统给出设置指令。
 ```
 
