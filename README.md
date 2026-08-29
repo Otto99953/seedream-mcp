@@ -6,13 +6,13 @@
 
 ## 📋 新设备 / 新 Agent 一键配置指令（直接复制给 Agent）
 
-> 在任何新设备上打开任意 AI Agent（如 Claude Code / Cursor / Windsurf / Cline / Roo Code / ZCode 等），**直接复制并发送以下通用提示词**，Agent 即可全自动完成拉取、安装与配置：
+> 在任何新设备上打开任意 AI Agent（如 ZCode / Claude Code / Codex 等），**直接复制并发送以下通用提示词**，Agent 即可全自动完成拉取、安装与配置：
 
 ```text
 请帮我一键配置并接入当前设备的 Seedream 生图 MCP 服务：
 1. 请参考本项目 README.md 中的“各主流 Agent 配置清单”，将本仓库克隆到本地用户工具目录（如 ~/.tools/seedream-mcp）并执行 npm install 安装依赖。
-2. 识别你当前所处的 Agent/客户端环境，按照 README 对应章节将 seedream MCP 服务注册到相应的配置文件中（建议配置超时时间为 180 秒/180000ms）。
-3. 如果当前环境支持 Skill/规则扩展（如 ~/.agents/skills/ 或对应指令规则），请根据 README 中的规范配置 image-generation 生图指导技能。
+2. 识别你当前所处的 Agent/客户端环境（ZCode / Claude / Codex），按照 README 对应章节将 seedream MCP 服务注册到相应的配置文件中（建议配置超时时间为 180 秒/180000ms）。
+3. 如果当前环境支持 Skill/规则扩展（如 ~/.agents/skills/ 或 ~/.zcode/skills/），请根据 README 中的规范配置 image-generation 生图指导技能。
 4. 检查系统环境变量 ARK_API_KEY 是否已配置，若未配置请根据当前操作系统给出设置指令。
 ```
 
@@ -74,22 +74,12 @@
     }
   }
   ```
-- **Skill / 规则路径**：`~/.claude/commands/` 或项目根目录 `CLAUDE.md`
+- **Skill / 指令路径**：`~/.claude/commands/`、`~/.agents/skills/` 或项目根目录 `CLAUDE.md`
 
 ---
 
-### 4. Cursor
-- **配置入口**：Settings → Features → MCP → **+ Add New MCP Server**
-- **配置项**：
-  - **Name**: `seedream`
-  - **Type**: `command`
-  - **Command**: `node <本地绝对路径>/seedream-mcp/index.js`
-- **Rules 路径**：`.cursorrules` 或 `.cursor/rules/`
-
----
-
-### 5. Windsurf (Cascade)
-- **配置文件路径**：`~/.codeium/windsurf/mcp_config.json`
+### 4. Codex
+- **配置文件路径**：`~/.agents/mcp.json` 或 `~/.codex/config.json`
 - **配置内容**：
   ```json
   {
@@ -104,24 +94,7 @@
     }
   }
   ```
-- **Rules 路径**：`.windsurfrules`
-
----
-
-### 6. VSCode 插件 (Cline / Roo Code)
-- **配置文件路径**：`cline_mcp_settings.json` 或在扩展界面的 MCP Servers 面板中添加：
-  ```json
-  {
-    "mcpServers": {
-      "seedream": {
-        "command": "node",
-        "args": ["<本地绝对路径>/seedream-mcp/index.js"],
-        "disabled": false,
-        "autoApprove": []
-      }
-    }
-  }
-  ```
+- **Skill / 规则路径**：`~/.agents/skills/image-generation/SKILL.md` 或项目根目录 `AGENTS.md`
 
 ---
 
