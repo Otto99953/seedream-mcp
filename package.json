@@ -1,0 +1,27 @@
+{
+  "name": "seedream-mcp",
+  "version": "1.1.0",
+  "description": "Doubao Seedream 5.0 Lite Image Generation MCP Server with Batch & Concurrency Support",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "seedream-mcp": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "mcp",
+    "seedream",
+    "volcengine",
+    "image-generation",
+    "model-context-protocol"
+  ],
+  "author": "Otto99953",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0"
+  }
+}
